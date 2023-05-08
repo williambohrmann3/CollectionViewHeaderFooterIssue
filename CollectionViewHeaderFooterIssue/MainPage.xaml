@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="CollectionViewHeaderFooterIssue.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout Padding="30,0"
+                         Spacing="25"
+                         VerticalOptions="Center">
+        <CollectionView x:Name="Concerts">
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="55">
+                    <Label Grid.Column="0"
+                           FontAttributes="Bold"
+                           Text="Artist" />
+                    <Label Grid.Column="1"
+                           FontAttributes="Bold"
+                           Text="Venue" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="50">
+                        <Label Grid.Column="0" Text="{Binding Artist}" />
+                        <Label Grid.Column="1" Text="{Binding Venue}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Footer>
+                <Label Text="Tickets on sale now" TextColor="Red" />
+            </CollectionView.Footer>
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentPage>
